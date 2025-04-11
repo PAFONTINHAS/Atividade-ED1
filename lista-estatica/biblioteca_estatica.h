@@ -1,20 +1,21 @@
 #ifndef BIBLIOTECA_ESTATICA_H
 #define BIBLIOTECA_ESTATICA_H
 
-
-#define MAX_LIVROS 100
+// Constantes para limitar os tamanhos
+#define MAX_LIVROS 5000
 #define MAX_TITULO 100
 #define MAX_AUTOR 100
 #define MAX_ISBN 14
 #define MAX_USUARIO 100
 #define MAX_DATA 11
 
+// Status do livro: pode estar disponível ou emprestado
 typedef enum {
     DISPONIVEL,
     EMPRESTADO
 } StatusLivro;
 
-
+// Estrutura de um livro
 typedef struct {
     char titulo[MAX_TITULO];
     char autor[MAX_AUTOR];
@@ -23,18 +24,15 @@ typedef struct {
     StatusLivro status;
     char usuario[MAX_USUARIO];
     char dataEmprestimo[MAX_DATA];
-
 } Livro;
 
-
+// Estrutura da biblioteca (vetor fixo de livros)
 typedef struct {
     Livro livros[MAX_LIVROS];
     int totalLivros;
 } Biblioteca;
 
-
-// Prototipos (os alunos deverão implementar no .c)
-
+// Funções disponíveis
 void inicializarBiblioteca(Biblioteca* b);
 int cadastrarLivro(Biblioteca* b, char* titulo, char* autor, int ano, char* isbn);
 void listarTodosLivros(Biblioteca* b);

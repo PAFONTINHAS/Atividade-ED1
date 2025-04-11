@@ -2,7 +2,7 @@
 
 #define BIBLIOTECA_ENCADEADA_H
 
-#define MAX_TITULO 100
+#define MAX_TITULO 50
 
 #define MAX_AUTOR 100
 
